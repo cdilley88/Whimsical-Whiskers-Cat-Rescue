@@ -1,0 +1,7 @@
+export type CatStatus='available'|'pending'|'adopted'|'medical_hold'|'foster_only';
+export type AdminRole='administrator'|'adoption_coordinator'|'animal_care'|'content_editor'|'store_manager'|'read_only_volunteer';
+export interface Cat {id:string;slug:string;name:string;birthDate:string;ageGroup:'kitten'|'adult'|'senior';sex:'female'|'male';breed:string;color:string;weight:number;status:CatStatus;summary:string;personality:string;story:string;compatibility:{cats:boolean;dogs:boolean;children:boolean};specialNeeds:string;bondedPair?:string;fee:number;region:string;featured:boolean;urgent?:boolean;photos:string[];intakeDate:string;spayedNeutered:boolean;vaccinated:boolean;microchipped:boolean;publicMedical:string;internalMedical?:string;archived?:boolean}
+export interface Product {id:string;slug:string;name:string;description:string;category:string;price:number;image:string;featured:boolean;active:boolean;inventory:number;variants:string[];shippingNotes:string}
+export interface EventItem {id:string;title:string;date:string;location:string;description:string;published:boolean}
+export interface Story {id:string;slug:string;title:string;excerpt:string;body:string;relatedCat?:string;publishedAt:string;featured:boolean}
+export interface Application {id:string;reference:string;catId:string;email:string;applicantName:string;phone:string;address:string;housing:string;household:string;pets:string;veterinarian:string;lifestyle:string;references:string;answers:string;agreements:boolean;signature:string;status:string;createdAt:string;notes?:string[]}

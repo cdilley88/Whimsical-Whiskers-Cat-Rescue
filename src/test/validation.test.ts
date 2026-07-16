@@ -1,0 +1,2 @@
+import{describe,expect,it}from'vitest';import{clean,validateEmail,validateRequired}from'../lib/validation';
+describe('form validation',()=>{it('sanitizes angle brackets and limits input',()=>expect(clean('<script>hello</script>',8)).toBe('scripthe'));it('validates email shape',()=>{expect(validateEmail('cat@example.com')).toBe(true);expect(validateEmail('not-an-email')).toBe(false)});it('reports missing required values',()=>expect(validateRequired({name:'Mabel',email:''})).toEqual(['email']))});
